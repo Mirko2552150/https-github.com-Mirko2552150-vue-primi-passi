@@ -1,0 +1,32 @@
+.completato {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 auto;
+  width: 60vw;
+  height: 100vh;
+}
+
+p {
+  font-size: 30px;
+}
+
+h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+body {
+  background-image: url('https://brisbanemarkets.com.au/wp-content/blogs.dir/9/files/2017/10/Website-Banner-Background-01-1024x527.png');
+  /* background-position: center; */
+  background-size: contain;
+  background-repeat: no-repeat;
+  
+}

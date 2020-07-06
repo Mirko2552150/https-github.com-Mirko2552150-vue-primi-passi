@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Vue Primi Passi </title>
+
+    <!-- link min BULMA (simile bootstrap) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+  </head>
+  <body>
+    <H1>ELENCO DELLA SPESA</H1>
+    <!-- richiamo l'id della ns VAR -->
+    <div id="app">
+      <div class="container">
+        <div class="field">
+          <div class="control">
+
+            <!-- inserisco v-model, input con cui riepiro la VAR vuota -->
+            <!-- inserisco v- nei FORM o negli INPUT per prendere il valore -->
+            <input class="input is-info" type="text" v-model="newTodo.text" @keypress.13="addTodo" />
+            <!-- aggiungo all'oggetto newTodo il text dal FORM -->
+
+            <!-- inserisco evento @click direttamente nel button, al click function addTodo() -->
+            <button class="button is-primary" type="button" name="button" @click="addTodo">Aggiungi prodotto</button>
+
+          </div>
+        </div>
+
+        <ul>
+
+          <!-- ciclo for, con singolare al primo posto  e plurale successivamente, invio anche l''indice dell'ARRAY -->
+          <li v-for="(todo, index) in todos">
+
+          <!-- stampo i singoli elementi dell'ARRAY -->
+          <!-- se todo.completatoe e' vero inserisci nella classe COMPLETATO, altrimenti nulla -->
+          <p :class="todo.completato ? 'completato' : '' ">{{ todo.text }}</p>
+
+            <button class="button is-success" v-if="todo.completato == true" type="button" name="button">V</button>
+            <button class="button is-warning" v-else @click="toggleCompletato(index)" type="button" name="button">?</button>
+
+            <!-- all'evento CLICK, passo indice e valore -->
+            <button class="button is-danger" type="button" name="button" @click="remuveTodo(index, todo)">X</button>
+          </li>
+
+        </ul>
+
+      </div>
+    </div>
+
+    <!-- cdn VUE -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="js/main.js" charset="utf-8"></script>
+  </body>
+</html>
