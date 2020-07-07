@@ -31,7 +31,7 @@ var app = new Vue({ // oggetto, la VAR la inseriamo nel div relativo
       this.todos.push({
         text: this.newTodo,
         completato: false
-      }); // aggiungo nell'Array todos, la var newTodos che genero con l'INPUT
+      }); // aggiungo nell'Array todos, l'oggeto che completo con la stringa presa dall'INPUT, la var newTodos che genero con l'INPUT
 
       this.newTodo = ""; // dopo il PUSH cancello il contenuto dell'INPUT (simile a EMPTY in JQUERY)
     },
