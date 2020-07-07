@@ -2,10 +2,7 @@
 var app = new Vue({ // oggetto, la VAR la inseriamo nel div relativo
   el: '#app', // ELEMENTO id da inserire del DIV per richiamare data e method
   data: {
-    newTodo : {
-      text: '',
-      completato: false
-    },
+    newTodo : "",
     todos : [
       {
         text: 'pane',
@@ -26,12 +23,15 @@ var app = new Vue({ // oggetto, la VAR la inseriamo nel div relativo
       {
         text: 'uova',
         completato: false
-      }
+      },
     ]
   },
   methods: { // inseriamo nel ns funzioni
     addTodo() { // aggiungo un elemento
-      this.todos.push(this.newTodo); // aggiungo nell'Array todos, la var newTodos che genero con l'INPUT
+      this.todos.push({
+        text: this.newTodo,
+        completato: false
+      }); // aggiungo nell'Array todos, la var newTodos che genero con l'INPUT
 
       this.newTodo = ""; // dopo il PUSH cancello il contenuto dell'INPUT (simile a EMPTY in JQUERY)
     },
