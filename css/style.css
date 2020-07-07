@@ -1,5 +1,6 @@
 .completato {
   color: rgba(0, 0, 0, 0.5);
+  text-decoration-line: line-through; 
 }
 
 * {
@@ -28,5 +29,5 @@ body {
   /* background-position: center; */
   background-size: contain;
   background-repeat: no-repeat;
-  
+
 }
