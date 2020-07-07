@@ -2,7 +2,7 @@
 var app = new Vue({ // oggetto, la VAR la inseriamo nel div relativo
   el: '#app', // ELEMENTO id da inserire del DIV per richiamare data e method
   data: {
-    newTodo : "",
+    newTodo : '',
     todos : [
       {
         text: 'pane',
